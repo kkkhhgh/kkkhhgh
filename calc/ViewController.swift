@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var ButtonRavno: UIButton!
     @IBOutlet weak var ButtonZero: UIButton!
     @IBOutlet weak var ButtonPlus: UIButton!
@@ -24,6 +25,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var ButtonSeven: UIButton!
     @IBOutlet weak var Delenie: UIButton!
     @IBOutlet weak var ButtonAC: UIButton!
+    
+    var numberOne = ""
+    var numberTwo = ""
+    var operand = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ButtonAC.layer.cornerRadius = 36
@@ -44,6 +51,55 @@ class ViewController: UIViewController {
         Minus.layer.cornerRadius = 36
     }
 
-
+    @IBAction func InputNumber(_ sender: UIButton) {
+        if operand.isEmpty {
+            numberOne = numberOne + (sender.titleLabel?.text)!
+            resultLabel.text = numberOne
+        }
+        else
+        {
+            numberTwo = numberTwo + (sender.titleLabel?.text)!
+            resultLabel.text = numberTwo
+        }
+    }
+    
+    @IBAction func inputOperand(_ sender: UIButton) {
+        operand = sender.titleLabel?.text as!
+              String
+    }
+    
+    @IBAction func clearAction(_ sender: UIButton) {
+        numberTwo = ""
+        numberOne = ""
+        operand = ""
+        resultLabel.text = "0"
+    }
+    
+    @IBAction func resultAction(_ sender: UIButton) {
+        
+        var result = 0.0
+        
+        switch operand {
+        case "/":
+            result = Double (numberOne)! / Double(numberTwo)!
+        case "+":
+            result = Double (numberOne)! + Double (numberTwo)!
+        case "-":
+            result = Double (numberOne)! - Double (numberTwo)!
+        case "*":
+            result = Double (numberOne)! * Double (numberTwo)!
+        default:
+            break
+        }
+        
+        if result.truncatingRemainder(dividingBy: 1.0) == 0.0 {
+            resultLabel.text = String(Int(result))
+        }
+        else
+        {
+            resultLabel.text = String(result)
+        }
+    }
+    
 }
 
