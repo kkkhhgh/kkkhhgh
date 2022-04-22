@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +28,7 @@
                                 <rect key="frame" x="-9" y="140" width="394" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="3ZZ-1R-3zY">
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="3ZZ-1R-3zY">
                                 <rect key="frame" x="35" y="239" width="308" height="408"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="164" translatesAutoresizingMaskIntoConstraints="NO" id="Dh4-cj-nuY">
@@ -314,6 +314,13 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-Li-B7U">
+                                <rect key="frame" x="35" y="200" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="hiddenButtons:" destination="BYZ-38-t0r" eventType="valueChanged" id="fkn-oh-lAX"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.40169259909999999" green="0.72299355269999999" blue="0.54507994650000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -326,23 +333,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ButtonAC" destination="fDW-Xb-B3g" id="P24-Uq-oho"/>
-                        <outlet property="ButtonEight" destination="j1y-G8-fSC" id="bBt-c9-cN4"/>
-                        <outlet property="ButtonFive" destination="aOh-aD-bhB" id="eBq-Oz-oNM"/>
-                        <outlet property="ButtonFour" destination="BAo-FS-eSK" id="6F0-wo-KUK"/>
-                        <outlet property="ButtonNine" destination="RMS-uC-Xcl" id="0ES-lp-SQy"/>
-                        <outlet property="ButtonONe" destination="FLB-Ed-lmm" id="pDO-ZD-d7h"/>
-                        <outlet property="ButtonPlus" destination="cvd-AD-9Ka" id="4gD-hj-cp0"/>
-                        <outlet property="ButtonRavno" destination="ngh-Jf-R5c" id="KYV-0c-1WN"/>
-                        <outlet property="ButtonSeven" destination="dr4-0U-b7x" id="QV5-ym-Ro5"/>
-                        <outlet property="ButtonSix" destination="P1h-jz-Az9" id="Hde-SS-6pc"/>
-                        <outlet property="ButtonThree" destination="FE3-GE-qdi" id="SWP-oS-hZy"/>
-                        <outlet property="ButtonTwo" destination="iYe-mj-oTa" id="lam-Dc-fZd"/>
-                        <outlet property="ButtonZero" destination="gmL-Fc-R2l" id="wxc-xg-GRG"/>
-                        <outlet property="Delenie" destination="TBO-6V-rnk" id="8bZ-nj-nNa"/>
-                        <outlet property="Minus" destination="VSf-QT-Uao" id="tjZ-cb-AVC"/>
+                        <outlet property="buttons" destination="3ZZ-1R-3zY" id="lN5-4F-gcM"/>
                         <outlet property="resultLabel" destination="Jog-E4-XcF" id="wYb-XV-sdV"/>
-                        <outlet property="umnozhenie" destination="AiN-Rc-Ofi" id="wrx-AH-cEi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
